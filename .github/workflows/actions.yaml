@@ -21,9 +21,9 @@ jobs:
           distribution: 'zulu'
           java-version: 16
 
-      -name: Run tests with maven
-       working-directory: webdriver_java
-       run: mvn test
+      - name: Run tests with maven
+        working-directory: webdriver_java
+        run: mvn test
 
 
 # What steps within each job
