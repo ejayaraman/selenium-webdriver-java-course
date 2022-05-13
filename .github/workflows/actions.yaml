@@ -10,7 +10,20 @@ on:
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
+    env:
+      RUNNER_OS: true
+      HEADLESS_CHROME: true
+
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 16
+
+      -name: Run tests with maven
+       working-directory: webdriver_java
+       run: mvn test
+
 
 # What steps within each job
